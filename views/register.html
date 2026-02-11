@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>สมัครสมาชิกใหม่ - กองคลังเลือดพะเยา</title>
+    <link rel="stylesheet" href="/public/css/register-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="reg-container">
+        <form id="regForm" class="reg-card">
+            <h2>สมัครสมาชิกใหม่</h2>
+            
+            <div class="grid-form">
+                <div class="input-group">
+                    <label>ชื่อ-นามสกุล</label>
+                    <input type="text" id="regName" placeholder="ภาษาไทย" required>
+                </div>
+                <div class="input-group">
+                    <label>อีเมล</label>
+                    <input type="email" id="regEmail" placeholder="example@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label>รหัสผ่าน</label>
+                    <input type="password" id="regPass" placeholder="ตั้งรหัสผ่าน" required>
+                </div>
+
+                <div class="input-group">
+                    <label>เลขบัตรประชาชน (13 หลัก)</label>
+                    <input type="text" id="regIdCard" maxlength="13" placeholder="xxxxxxxxxxxxx" required>
+                </div>
+                <div class="input-group">
+                    <label>เบอร์โทรศัพท์</label>
+                    <input type="tel" id="regPhone" placeholder="08x-xxx-xxxx" required>
+                </div>
+                <div class="input-group">
+                    <label>เพศ</label>
+                    <select id="regGender" required>
+                        <option value="">เลือกเพศ</option>
+                        <option value="ชาย">ชาย</option>
+                        <option value="หญิง">หญิง</option>
+                    </select>
+                </div>
+                <div class="input-group full-width">
+                    <label>หมู่เลือด</label>
+                    <select id="regBlood" required>
+                        <option value="">เลือกหมู่เลือด</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-reg">ยืนยันการสมัครสมาชิก</button>
+            <a href="/login.html" class="back-to-login">มีบัญชีอยู่แล้ว? เข้าสู่ระบบ</a>
+        </form>
+    </div>
+    <script src="/public/js/register-script.js"></script>
+</body>
+</html>

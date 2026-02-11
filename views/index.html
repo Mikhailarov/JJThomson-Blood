@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ธนาคารโลหิต รพ.พะเยา</title>
+    <link rel="stylesheet" href="/public/css/index-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+     <nav class="navbar">
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="/index.html" class="nav-item-big">หน้าแรก</a></li>
+            
+            <li id="admin-link-item" style="display: none;">
+                <a href="/admin.html" class="nav-item-big" style="color: #d32f2f;">
+                    <i class="fas fa-user-shield"></i> กลับสู่หน้า ADMIN
+                </a>
+            </li>
+
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn nav-item-big">เกี่ยวกับ ▾</a>
+                <div class="dropdown-content">
+                    <a href="/indexเกี่ยวกับ.html">เกี่ยวกับเรา</a>
+                    <a href="/indexคำถามที่พบบ่อย.html">คำถามที่พบบ่อย</a>
+                    <a href="/indexแจ้งปัญหาการใช้งาน.html">แจ้งปัญหาการใช้งาน</a>
+                </div>
+            </li>
+        </ul>
+        <div id="auth-menu" class="auth-section"></div>
+    </div>
+</nav>
+
+
+    <header class="main-header">
+        <h1>ประชาสัมพันธ์ ธนาคารโลหิต โรงพยาบาลพะเยา</h1>
+        <p>ต.บ้านต๋อม อ.เมือง จ.พะเยา </p>
+    </header>
+
+
+    <main class="container">
+        <section class="post-section">
+            <div class="post-box">
+                <h3>สร้างโพสต์ประชาสัมพันธ์</h3>
+                <form id="mainPostForm">
+                    <textarea id="msg" placeholder="ระบุรายละเอียดที่นี่..." required></textarea>
+                    <div class="post-footer">
+                        <div class="file-upload">
+                            <label for="mediaFile" class="btn-file"><i class="fas fa-image"></i> เลือกรูป</label>
+                            <input type="file" id="mediaFile" accept="image/*" style="display: none;" onchange="document.getElementById('fileName').innerText = this.files[0].name">
+                            <span id="fileName">ยังไม่ได้เลือกไฟล์</span>
+                        </div>
+                        <button type="submit" class="btn-submit">ส่งข้อมูล</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+<div class="grid-content">
+    <aside class="left-col" id="status-column">
+        <h4 class="label-title">ติดตามสถานะ</h4>
+        <div id="myStatusList"></div>
+    </aside>
+
+
+    <article class="right-col" id="news-column">
+        <h2 class="label-title">ข่าวสารล่าสุด</h2>
+        <div id="news-container"></div>
+    </article>
+</div>
+    </main>
+    <script src="/public/js/index-script.js"></script>
+</body>
+</html>

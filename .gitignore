@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+server/.env
+.env
+
+# Local database
+server/data/
+server/data/dev.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+
+# npm
+package-lock.json
+
+# Build outputs
+dist/
+build/
+
+# Temporary
+*.tmp
+*.temp
+
+# Ignore sensitive scripts if any
+server/scripts/*.env

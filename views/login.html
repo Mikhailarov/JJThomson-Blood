@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>เข้าสู่ระบบ - กองคลังเลือดพะเยา</title>
+    <link rel="stylesheet" href="/public/css/login-style.css">
+</head>
+<body>
+    <div class="login-container">
+        <a href="/" class="back-link">← กลับหน้าหลัก</a>
+        <form id="loginForm" class="login-card">
+            <h2>เข้าสู่ระบบ</h2>
+            
+            <div class="input-group">
+                <label>ชื่อ-นามสกุล</label>
+                <input type="text" id="nameInput" placeholder="กรอกชื่อของคุณ" required>
+            </div>
+
+            <div class="input-group">
+                <label>อีเมล</label>
+                <input type="email" id="emailInput" placeholder="example@gmail.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label>รหัสผ่าน</label>
+                <input type="password" id="passwordInput" placeholder="••••••••" required>
+            </div>
+            
+            <button type="submit" class="btn-login">เข้าสู่ระบบ</button>
+            <p class="register-text">ยังไม่มีบัญชี? <a href="/register.html">สมัครสมาชิกที่นี่</a></p>
+        </form>
+    </div>
+    <script src="/public/js/login-script.js"></script>
+</body>
+</html>

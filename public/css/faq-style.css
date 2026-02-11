@@ -1,0 +1,123 @@
+:root {
+    --primary-red: #d32f2f;
+    --soft-red: #fff5f5;
+    --text-dark: #333;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    font-family: 'Kanit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.faq-wrapper {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-red);
+    font-weight: 500;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+h1 {
+    color: var(--text-dark);
+    font-size: 2rem;
+    margin-bottom: 35px;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-red);
+    display: table;
+    margin: 0 auto 35px auto;
+    padding-bottom: 10px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.quest {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: left;
+}
+
+.quest:hover { background: var(--soft-red); color: var(--primary-red); }
+
+.quest.active {
+    background: var(--primary-red);
+    color: white;
+}
+
+.ans {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+}
+
+.ans-content {
+    padding: 20px;
+    line-height: 1.8;
+    color: #555;
+    border-top: 1px solid #eee;
+}
+
+#faqForm {
+    background: #fdfdfd;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px dashed #dee2e6;
+    margin-top: 30px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    font-family: 'Kanit', sans-serif;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.icon { transition: 0.3s; }
+.quest.active .icon { transform: rotate(180deg); }

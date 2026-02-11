@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - ธนาคารโลหิต</title>
+   <link rel="stylesheet" href="/public/css/admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul class="nav-menu">
+                <li onclick="location.href='/'" class="btn-home"><i class="fas fa-home"></i> ไปหน้าหลัก</li>
+                <li onclick="showSection('pending')" id="menu-pending" class="active"><i class="fas fa-clock"></i> รออนุมัติ</li>
+                <li onclick="showSection('approved')" id="menu-approved"><i class="fas fa-check-circle"></i> โพสต์ที่อนุมัติแล้ว</li>
+                <li onclick="showSection('create')" id="menu-create"><i class="fas fa-plus-circle"></i> โพสต์ข่าวใหม่</li>
+                <li onclick="showSection('faq')" id="menu-faq"><i class="fas fa-question-circle"></i> จัดการ FAQ</li>
+                <li onclick="showSection('siteReport')" id="menu-site-report"><i class="fas fa-bug"></i> แจ้งปัญหาการใช้งาน</li>
+                
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div id="manage-section">
+                <h2 id="section-title">จัดการโพสต์จากผู้ใช้งาน</h2>
+                <hr class="section-divider">
+                <div id="post-list"></div>
+            </div>
+
+            <div id="create-section" class="hidden">
+                <h2>สร้างโพสต์ประชาสัมพันธ์ (โดยแอดมิน)</h2>
+                <div class="manage-card mt-20">
+                    <form id="adminPostForm">
+                        <textarea id="adminMsg" placeholder="เขียนรายละเอียดข่าวสาร..." required class="admin-textarea"></textarea>
+                        <div class="post-footer">
+                            <div class="file-upload-group">
+                                <label for="adminFile" class="btn-file">
+                                    <i class="fas fa-image"></i> เลือกรูป
+                                </label>
+                                <input type="file" id="adminFile" accept="image/*" class="hidden" onchange="updateFileName(this)">
+                                <span id="adminFileName" class="file-name-display">ยังไม่ได้เลือกไฟล์</span>
+                            </div>
+                            <button type="submit" class="btn-approve px-30">โพสต์ข่าวทันที</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="faq-section" class="hidden">
+                <h2>จัดการคำถามที่พบบ่อย (FAQ)</h2>
+                <p class="section-desc">เขียนคำตอบเพื่อให้ผู้ใช้งานอ่านหรือตอบคำถามจาก User</p>
+                <div class="manage-card">
+                    <h3><i class="fas fa-pen-nib"></i> เพิ่ม/แก้ไข FAQ</h3>
+                    <form id="faqAdminForm" class="mt-15">
+                        <input type="text" id="faqQuest" class="faq-input" placeholder="ระบุหัวข้อคำถาม..." required>
+                        <textarea id="faqAns" class="faq-input h-100" placeholder="ระบุคำตอบ..." required></textarea>
+                        <button type="submit" class="btn-save-faq">บันทึกลงหน้า FAQ</button>
+                    </form>
+                </div>
+                <div id="user-questions-list" class="mt-15"></div>
+                <div id="faq-list-admin" class="mt-15"></div>
+            </div>
+
+            <section id="site-report-section" class="hidden">
+                <h2><i class="fas fa-exclamation-circle"></i> รายการแจ้งปัญหาจากผู้ใช้</h2>
+                <div id="site-report-list-admin"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/public/js/admin-script.js"></script>
+</body>
+</html>
